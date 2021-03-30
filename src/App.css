@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --nav-background-color: rgb(47, 46, 63);
+}
+
+html, body, #root, #siteContainer{
+    height: 100%;
+    width: 100%;
+    /* background-color: var(--main-background-color); */
+}
+
+html, body{
+    margin: 0;
+}
+
+
+/* Nav bar */
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: var(--nav-background-color);
+    color: white;
+}
+
+#navHeader{
+    font-size: 30px;
+}
+
+.navTabs{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    width: 30%;
+    font-size: 30px;
+}
+
+.navTabs a, nav a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Error */
+
+#errorContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
