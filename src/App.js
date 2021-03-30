@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Routes from './Routes';
+import Nav from './Components/Nav';
 
 const App = () =>{
   return (
-    <div>
-      <h1>Hello from App</h1>
+    <div id='siteContainer'>
+      <Nav />
+      <Routes />
     </div>
   )
 }
