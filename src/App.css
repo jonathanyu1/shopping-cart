@@ -5,6 +5,7 @@
 :root{
     --navColor: white;
     --navColorBlack: black;
+    --homeBgColor: #131313;
 }
 
 html, body, #root, #siteContainer{
@@ -21,7 +22,8 @@ html, body{
 /* Nav bar */
 
 #navContainer{
-    
+    border-bottom: 1px solid var( --homeBgColor);
+    margin: 0 5%;
 }
 
 nav{
@@ -98,6 +100,15 @@ nav{
     padding: 20px;
     text-decoration: none;
 }
+
+/* Shop */
+
+#shopContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5% 5%;
+}
+
 
 /* Error */
 

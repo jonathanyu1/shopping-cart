@@ -7,6 +7,8 @@ import productData from './productData';
 
 const App = () =>{
 
+  const [cartItems, setCartItems] = useState([]);
+
   // keep track of cart, send to nav 
 
   useEffect(()=>{
