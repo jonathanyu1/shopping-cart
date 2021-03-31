@@ -5,7 +5,7 @@
 :root{
     --navColor: white;
     --navColorBlack: black;
-    --homeBgColor: #131313;
+    --homeBgColor: rgba(19, 19, 19, 0.1);
 }
 
 html, body, #root, #siteContainer{
@@ -22,7 +22,7 @@ html, body{
 /* Nav bar */
 
 #navContainer{
-    border-bottom: 1px solid var( --homeBgColor);
+    border-bottom: 2px solid var( --homeBgColor);
     margin: 0 5%;
 }
 
@@ -106,7 +106,19 @@ nav{
 #shopContainer{
     display: flex;
     flex-wrap: wrap;
-    margin: 5% 5%;
+    margin: 2% 5% 0% 12%;
+}
+
+#shopContainer a{
+    flex-basis: 33.3333%;
+}
+/* .productCardContainer{
+    flex-basis: 33.3333%;
+} */
+
+.productCardImage img{
+    width: 450px;
+    height: 325px;
 }
 
 

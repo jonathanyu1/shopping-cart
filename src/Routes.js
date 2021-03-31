@@ -6,13 +6,20 @@ import Cart from './Components/Cart';
 import Error from './Components/Error';
 import ProductPage from './Components/ProductPage';
 
-const Routes = () =>{
+const Routes = (props) =>{
     return (
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/shop' component={Shop} />
                 <Route exact path='/cart' component={Cart} />
-                <Route path='/shop/:id' component={ProductPage}/>
+                {/* <Route path='/shop/:id' component={ProductPage}/> */}
+                <Route
+                    path='/shop/:id'
+                    render={routeProps=>(
+                        <ProductPage {...routeProps} product={(props.findProductById(routeProps.match.params.id))}/>
+                        // <ProductPage product={(props.findProductById(routeProps.match))}/>
+                    )}
+                />
                 <Route component={Error}/>
             </Switch>
     );

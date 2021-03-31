@@ -11,6 +11,10 @@ const App = () =>{
 
   // keep track of cart, send to nav 
 
+  const findProductById = (id) =>{
+    return productData.find(product => product.id===id);
+  }
+
   useEffect(()=>{
     console.log(productData);
   },[]);
@@ -19,7 +23,7 @@ const App = () =>{
     <BrowserRouter>
       <div id='siteContainer'>
           <Nav />
-          <Routes />
+          <Routes findProductById={findProductById}/>
       </div>
     </BrowserRouter>
   )
