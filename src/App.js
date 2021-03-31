@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import Routes from './Routes';
 import Nav from './Components/Nav';
 import {BrowserRouter} from 'react-router-dom';
+import productData from './productData';
 
 const App = () =>{
 
   // keep track of cart, send to nav 
+
+  useEffect(()=>{
+    console.log(productData);
+  },[]);
 
   return (
     <BrowserRouter>
