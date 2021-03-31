@@ -10,7 +10,7 @@ const App = () =>{
 
   return (
     <BrowserRouter>
-      <div id='siteContainer'>    
+      <div id='siteContainer'>
           <Nav />
           <Routes />
       </div>

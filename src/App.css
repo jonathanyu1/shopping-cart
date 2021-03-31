@@ -3,7 +3,8 @@
 }
 
 :root{
-    --nav-background-color: rgb(47, 46, 63);
+    --nav-color: white;
+    --nav-color-black: black;
 }
 
 html, body, #root, #siteContainer{
@@ -19,13 +20,32 @@ html, body{
 
 /* Nav bar */
 
+#navContainer{
+    
+}
+
 nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 8vh;
-    background-color: var(--nav-background-color);
-    color: white;
+    min-height: 10vh;
+    color: var(--nav-color);
+    /* z-index: 10; */
+}
+
+/* nav a{
+    text-decoration: none;
+    color: var(--nav-color);
+} */
+
+.navWhite{
+    text-decoration: none;
+    color: var(--nav-color);
+}
+
+.navBlack{
+    text-decoration: none;
+    color: var(--nav-color-black);
 }
 
 #navHeader{
@@ -41,9 +61,46 @@ nav{
     font-size: 30px;
 }
 
-.navTabs a, nav a{
-    text-decoration: none;
+
+
+
+/* Home */
+
+#homeContainer{
+    /* background: url('./images/background/funkoBg.png') no-repeat fixed center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; */
+}
+
+#homeBackground{
+    background: url('./images/background/funkoBg.png') no-repeat fixed center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#homeMessageContainer{
+    text-align: center;
+    padding-top: 5vh;
     color: white;
+    font-size: 30px;
+    z-index: 10;
+}
+
+.homeShopLink{
+    background-color: white;
+    color: black;
+    padding: 20px;
+    text-decoration: none;
 }
 
 /* Error */
