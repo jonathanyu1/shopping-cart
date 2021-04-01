@@ -23,7 +23,7 @@ const productData = [
     {
         imgName:'funkoFlash.jpg',
         id:'funkoFlash',
-        name:'Flash',
+        name:'The Flash',
         price:'19.99',
         quantity:'1',
     },

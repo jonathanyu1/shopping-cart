@@ -23,7 +23,7 @@ const Nav = () => {
                 <nav className='nav'>
                     <div id='navHeaderContainer'>
                         <Link to='/' className={textColor==='white'?'navWhite':'navBlack'}>
-                            <div id='navHeader'>Funko Pops</div>
+                            <div id='navHeader'>Funko King</div>
                         </Link>
                     </div>
                     <ul className='navTabs'>

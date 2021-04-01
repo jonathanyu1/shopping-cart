@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 
 const ProductPage = (props) => {
 
@@ -10,7 +11,17 @@ const ProductPage = (props) => {
 
     return (
         <div id='productPageContainer'>
-            Hello from Product Page: {props.product.name}
+            <img src={`../images/productImages/${props.product.imgName}`} alt={`${props.product.name} funko`} className='productPageImage'/>
+            <div className='productPageDetails'>
+                <div className='productPageCardName'>
+                    {props.product.name}
+                </div>
+                <div className='productPageCardPrice'>
+                    ${props.product.price}
+                </div>
+                <button className='btnAddCart'>Add to cart</button>
+                <Link to='/cart' className='cartLink'>Go to Checkout</Link>
+            </div>
         </div>
     )
 

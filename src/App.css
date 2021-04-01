@@ -3,15 +3,22 @@
 }
 
 :root{
+    --font: 'Montserrat', sans-serif;
     --navColor: white;
     --navColorBlack: black;
-    --homeBgColor: rgba(19, 19, 19, 0.1);
+    --navUnderlineColor: rgba(19, 19, 19, 0.1);
+    --bgColor: rgb(214, 214, 214);
+    --addCartColor: rgb(240, 178, 128);
+    --cartLinkColor: rgb(190, 184, 184);
+    --shopBgColor: rgb(240, 238, 238);
 }
 
 html, body, #root, #siteContainer{
     height: 100%;
     width: 100%;
     /* background-color: var(--main-background-color); */
+    font-family: var(--font);
+    
 }
 
 html, body{
@@ -22,8 +29,9 @@ html, body{
 /* Nav bar */
 
 #navContainer{
-    border-bottom: 2px solid var( --homeBgColor);
+    border-bottom: 2px solid var( --navUnderlineColor);
     margin: 0 5%;
+    
 }
 
 nav{
@@ -44,10 +52,12 @@ nav{
 .navBlack{
     text-decoration: none;
     color: var(--navColorBlack);
+    
 }
 
 #navHeader{
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: 700;
 }
 
 .navTabs{
@@ -94,6 +104,14 @@ nav{
     z-index: 10;
 }
 
+#homeMessageContainer h1{
+    margin-bottom: 0px;
+}
+
+#homeMessageContainer h3{
+    margin-block-start: 0.5em;
+}
+
 .homeShopLink{
     background-color: white;
     color: black;
@@ -121,6 +139,68 @@ nav{
     height: 325px;
 }
 
+/* Product Page */ 
+
+/* #productPageContainer{
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 7% 15%;
+} */
+#productPageContainer{
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--shopBgColor);
+}
+
+.productPageImage{
+    height: 50%;
+}
+
+.productPageDetails{
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.productPageCardName{
+    font-weight: 700;
+    font-size: 100px;
+    margin-bottom: 30px;
+}
+
+.productPageCardPrice{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.btnAddCart{
+    width: 80%;
+    font-size: 25px;
+    padding: 10px 0;
+    margin-bottom: 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--addCartColor);
+}
+
+.cartLink{
+    text-decoration: none;
+    width: 80%;
+    font-size: 25px;
+    padding: 10px 0;
+    border: none;
+    text-align: center;
+    color: var(--navColorBlack);
+    border-radius: 5px;
+    background-color: var(--cartLinkColor);
+}
 
 /* Error */
 
