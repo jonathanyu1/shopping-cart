@@ -19,7 +19,11 @@ const ProductPage = (props) => {
                 <div className='productPageCardPrice'>
                     ${props.product.price}
                 </div>
-                <button className='btnAddCart'>Add to cart</button>
+                <button 
+                    className='btnAddCart' 
+                    onClick={()=>props.addProductToCart(props.product)}
+                >Add to cart
+                </button>
                 <Link to='/cart' className='cartLink'>Go to Checkout</Link>
             </div>
         </div>

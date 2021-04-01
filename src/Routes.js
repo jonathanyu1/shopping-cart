@@ -16,7 +16,11 @@ const Routes = (props) =>{
                 <Route
                     path='/shop/:id'
                     render={routeProps=>(
-                        <ProductPage {...routeProps} product={(props.findProductById(routeProps.match.params.id))}/>
+                        <ProductPage 
+                            {...routeProps} 
+                            product={(props.getProductById(routeProps.match.params.id))}
+                            addProductToCart={props.addProductToCart}
+                        />
                         // <ProductPage product={(props.findProductById(routeProps.match))}/>
                     )}
                 />

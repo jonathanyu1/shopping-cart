@@ -69,6 +69,15 @@ nav{
     font-size: 30px;
 }
 
+#navCartContainer{
+    display: flex;
+    align-items: center;
+}
+
+#navCartIcon{
+    font-size: 35px;
+}
+
 
 
 

@@ -11,9 +11,18 @@ const App = () =>{
 
   // keep track of cart, send to nav 
 
-  const findProductById = (id) =>{
+  const getProductById = (id) =>{
     return productData.find(product => product.id===id);
   }
+
+  const addProductToCart = (product) => {
+    setCartItems([...cartItems,product]);
+  }
+
+  useEffect(()=>{
+    console.log(cartItems);
+    console.log(cartItems.length);
+  },[cartItems]);
 
   useEffect(()=>{
     console.log(productData);
@@ -22,8 +31,12 @@ const App = () =>{
   return (
     <BrowserRouter>
       <div id='siteContainer'>
-          <Nav />
-          <Routes findProductById={findProductById}/>
+          <Nav numCartItems={cartItems.length}/>
+          <Routes 
+            getProductById={getProductById} 
+            addProductToCart={addProductToCart}
+            cartItems={cartItems}
+          />
       </div>
     </BrowserRouter>
   )

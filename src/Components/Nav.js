@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = (props) => {
 
     let location = useLocation();
     const [textColor, setTextColor] = useState('white');
@@ -34,7 +34,7 @@ const Nav = () => {
                             <li>Shop</li>
                         </Link>
                         <Link to='/cart' className={textColor==='white'?'navWhite':'navBlack'}>
-                            <li>Cart</li>
+                            <li id='navCartContainer'><span id='navCartIcon'class="material-icons">shopping_cart</span>({props.numCartItems})</li>
                         </Link>
                     </ul>
                 </nav>
