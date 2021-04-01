@@ -124,19 +124,32 @@ nav{
 #shopContainer{
     display: flex;
     flex-wrap: wrap;
-    margin: 2% 5% 0% 12%;
+    margin: 2% 5% 0% 12%;    
 }
 
 #shopContainer a{
     flex-basis: 33.3333%;
+    text-decoration: none;
+    color: black;
 }
-/* .productCardContainer{
-    flex-basis: 33.3333%;
-} */
+.productCardContainer{
+    border-bottom: 1px solid var(--navUnderlineColor);
+}
 
 .productCardImage img{
     width: 450px;
     height: 325px;
+    margin-bottom: 5px;
+}
+
+.productCardName{
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.productCardPrice{
+    margin-bottom: 25px;
 }
 
 /* Product Page */ 
