@@ -9,6 +9,7 @@ const App = () =>{
 
   const [cartItems, setCartItems] = useState([]);
   const [numCartItems, setNumCartItems] = useState(0);
+  const [subtotal, setSubtotal] = useState(0);
 
   // keep track of cart, send to nav 
 
@@ -16,14 +17,30 @@ const App = () =>{
     return productData.find(product => product.id===id);
   }
 
-  const changeProductQuantity = (id, amount) => {
+  // const changeProductQuantity = (id, amount) => {
+  //   const tempCartItems = [...cartItems];
+  //   tempCartItems.forEach((cartItem)=>{
+  //     console.log(cartItem);
+  //     console.log(cartItem.id);
+  //     console.log(id);
+  //     if (cartItem.id===id){
+  //       cartItem.quantity += amount;
+  //     }
+  //   });
+  //   setCartItems(tempCartItems);
+  // }
+  const changeProductQuantity = (id, newQuantity) => {
     const tempCartItems = [...cartItems];
     tempCartItems.forEach((cartItem)=>{
       console.log(cartItem);
       console.log(cartItem.id);
       console.log(id);
       if (cartItem.id===id){
-        cartItem.quantity += amount;
+        if (Number(newQuantity)<=0){
+          // prevents input quantity from being 0 or less
+          newQuantity=1;
+        }
+        cartItem.quantity = Number(newQuantity);
       }
     });
     setCartItems(tempCartItems);
@@ -32,11 +49,16 @@ const App = () =>{
   const addProductToCart = (product) => {
     // if new product, add to cartItems
     if (cartItems.indexOf(product)===-1){
+      product.quantity=1;
       setCartItems([...cartItems,product]);
     } else {
       // product already exists in cart, need to increment quantity by 1
-      changeProductQuantity(product.id, 1);
+      changeProductQuantity(product.id, product.quantity+1);
     }
+  }
+
+  const removeProduct = (id) => {
+    setCartItems(cartItems=>cartItems.filter(cartItem => cartItem.id !== id));
   }
 
   const getNumCartItems = () => {
@@ -47,10 +69,18 @@ const App = () =>{
     setNumCartItems(totalItems);
   }
 
+  const calcSubtotal = () => {
+    let tempSubtotal = 0;
+    cartItems.forEach((cartItem)=>{
+        tempSubtotal += (cartItem.price * cartItem.quantity);
+    });
+    setSubtotal(tempSubtotal.toFixed(2));
+}
+
   useEffect(()=>{
-    console.log(cartItems);
-    console.log(cartItems.length);
     getNumCartItems();
+    calcSubtotal();
+    console.log(cartItems);
   },[cartItems]);
 
   useEffect(()=>{
@@ -64,8 +94,10 @@ const App = () =>{
           <Routes 
             getProductById={getProductById} 
             addProductToCart={addProductToCart}
+            removeProduct={removeProduct}
             cartItems={cartItems}
             changeProductQuantity={changeProductQuantity}
+            subtotal={subtotal}
           />
       </div>
     </BrowserRouter>

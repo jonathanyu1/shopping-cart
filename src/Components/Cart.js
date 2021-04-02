@@ -1,8 +1,11 @@
 import React, {useState,useEffect} from 'react';
+import {Link} from 'react-router-dom';
+import CartItem from './CartItem';
 
 const Cart = (props) => {
     
     const [cartItems, setCartItems] = useState([]);
+    // const [subtotal, setSubtotal] = useState('');
     // const [cartItemsDuplicates, setCartItemsDuplicates] = useState([]);
     // const [updatedCartItems, setUpdatedCartItems] = useState([]);
 
@@ -21,47 +24,70 @@ const Cart = (props) => {
     //     console.log(tempCartItems);
     // }
 
+    // const calcSubtotal = () => {
+    //     let tempSubtotal = 0;
+    //     cartItems.forEach((cartItem)=>{
+    //         tempSubtotal += (cartItem.price * cartItem.quantity);
+    //     });
+    //     setSubtotal(tempSubtotal);
+    // }
+
     useEffect(()=>{
         console.log(props);
         setCartItems(props.cartItems);
+        // calcSubtotal();
     },[]);
 
     useEffect(()=>{
-        // countDuplicates();
-        // removeDuplicates();
-    },[cartItems]);
+        setCartItems(props.cartItems);
+    },[props.cartItems]);
 
     // useEffect(()=>{
-    //     console.log(cartItemsDuplicates);
-    //     console.log(typeof(cartItemsDuplicates));
-    //     console.log(Object.keys(cartItemsDuplicates));
-    //     Object.keys(cartItemsDuplicates).forEach((cartItemsDuplicateKey)=>{
-    //         console.log(cartItemsDuplicateKey);
-    //         console.log(cartItemsDuplicates[cartItemsDuplicateKey]);
-    //         // cartItemsDuplicates[cartItemsDuplicateKey] +=1;
-    //         // console.log(cartItemsDuplicates[cartItemsDuplicateKey]);
-    //     });
-    // },[cartItemsDuplicates]);
-    
+    //     calcSubtotal();
+    // },[cartItems]);
 
     return (
         <div id='cartContainer'>
             {cartItems.map(cartItem=>{
-                return(
-                    <div className='cartCardContainer'>
-                        <div className='cartCardImage'>
-                            <img src={`../images/productImages/${cartItem.imgName}`} alt={`${cartItem.name} funko`}/>
-                        </div>
-                        <div className='cartCardName'>
-                            {cartItem.name}
-                        </div>
-                        <div className='cartCardPrice'>
-                            {cartItem.price}
-                        </div>
-                        <div>Quantity: {cartItem.quantity}</div>
-                    </div>
+                return (
+                    <CartItem
+                        key={cartItem.id}
+                        cartItem={cartItem}
+                        changeProductQuantity={props.changeProductQuantity}
+                        removeProduct={props.removeProduct}
+                    />
                 )
+                // return(
+                //     <div className='cartCardContainer'>
+                //         <div className='cartCardImage'>
+                //             <img src={`../images/productImages/${cartItem.imgName}`} alt={`${cartItem.name} funko`}/>
+                //         </div>
+                //         <div className='cartCardName'>
+                //             {cartItem.name}
+                //         </div>
+                //         <div className='cartCardPrice'>
+                //             {cartItem.price}
+                //         </div>
+                //         <div id='cartCardQuantityContainer'>
+                //             <label for='quantity'>Quantity: </label>
+                //             <input 
+                //                 type='number'
+                //                 name='quantity'
+                //                 className='cartCardQuantity'
+                //                 min='1'
+                //                 max='99'
+                //                 value={cartItem.quantity}
+                //                 onChange={onChange}
+                //             />
+                //         </div>
+                //     </div>
+                // )
+                
             })}
+            <div id='cartTotalContainer'>
+                <div id='cartSubtotal'>Subtotal: {props.subtotal}</div>
+                <Link to='/'>Checkout</Link>
+            </div>
         </div>
     )
 

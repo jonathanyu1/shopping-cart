@@ -18,6 +18,8 @@ const Routes = (props) =>{
                             {...routeProps}
                             cartItems={props.cartItems}
                             changeProductQuantity={props.changeProductQuantity}
+                            subtotal={props.subtotal}
+                            removeProduct={props.removeProduct}
                         />
                     )}
                 />
