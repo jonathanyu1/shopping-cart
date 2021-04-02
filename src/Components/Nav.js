@@ -34,7 +34,7 @@ const Nav = (props) => {
                             <li>Shop</li>
                         </Link>
                         <Link to='/cart' className={textColor==='white'?'navWhite':'navBlack'}>
-                            <li id='navCartContainer'><span id='navCartIcon'class="material-icons">shopping_cart</span>({props.numCartItems})</li>
+                            <li id='navCartContainer'><span id='navCartIcon'className="material-icons">shopping_cart</span>({props.numCartItems})</li>
                         </Link>
                     </ul>
                 </nav>

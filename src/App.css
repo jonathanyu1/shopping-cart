@@ -224,6 +224,18 @@ nav{
     background-color: var(--cartLinkColor);
 }
 
+/* Cart */
+
+#cartContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.cartCardContainer{
+    display: flex;
+    flex-direction: row;
+}
+
 /* Error */
 
 #errorContainer{

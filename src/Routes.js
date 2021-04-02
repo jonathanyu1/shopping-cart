@@ -11,7 +11,16 @@ const Routes = (props) =>{
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/shop' component={Shop} />
-                <Route exact path='/cart' component={Cart} />
+                <Route 
+                    exact path='/cart' 
+                    render={routeProps=>(
+                        <Cart 
+                            {...routeProps}
+                            cartItems={props.cartItems}
+                            changeProductQuantity={props.changeProductQuantity}
+                        />
+                    )}
+                />
                 {/* <Route path='/shop/:id' component={ProductPage}/> */}
                 <Route
                     path='/shop/:id'

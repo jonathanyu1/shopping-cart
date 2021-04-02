@@ -15,7 +15,7 @@ const Shop = () => {
     return (
         <div id='shopContainer'>
             {products.map(product => {
-                return (<Link to={`/shop/${product.id}`}>
+                return (<Link to={`/shop/${product.id}`} key={product.id}>
                             <ProductCard 
                                 key={product.id} 
                                 id={product.id}
