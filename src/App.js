@@ -18,9 +18,6 @@ const App = () =>{
   const changeProductQuantity = (id, newQuantity) => {
     const tempCartItems = [...cartItems];
     tempCartItems.forEach((cartItem)=>{
-      console.log(cartItem);
-      console.log(cartItem.id);
-      console.log(id);
       if (cartItem.id===id){
         if (Number(newQuantity)<=0){
           // prevents input quantity from being 0 or less
