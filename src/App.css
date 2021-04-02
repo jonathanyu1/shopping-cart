@@ -11,6 +11,7 @@
     --addCartColor: rgb(240, 178, 128);
     --cartLinkColor: rgb(190, 184, 184);
     --shopBgColor: rgb(240, 238, 238);
+    --emptyCartColor: grey;
 }
 
 html, body, #root, #siteContainer{
@@ -290,7 +291,23 @@ nav{
 
 #cartTotalContainer a{
     text-decoration: none;
+}
 
+#cartEmptyContainer{
+    text-align: center;
+}
+
+#cartEmptyContainer{
+    font-size: 50px;
+    color: var(--emptyCartColor);
+}
+
+#cartEmptyMessage{
+    margin: 10% 0 3%;
+}
+
+#cartEmptyContainer span{
+    font-size: 250px;
 }
 
 /* Error */
