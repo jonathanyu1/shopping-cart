@@ -40,57 +40,35 @@ const Cart = (props) => {
 
     useEffect(()=>{
         setCartItems(props.cartItems);
+        console.log(cartItems);
+        console.log(cartItems.length);
     },[props.cartItems]);
 
     // useEffect(()=>{
     //     calcSubtotal();
     // },[cartItems]);
 
+    
+    // add section for empty cart
     return (
         <div id='cartContainer'>
-            {cartItems.map(cartItem=>{
-                return (
-                    <CartItem
-                        key={cartItem.id}
-                        cartItem={cartItem}
-                        changeProductQuantity={props.changeProductQuantity}
-                        removeProduct={props.removeProduct}
-                    />
-                )
-                // return(
-                //     <div className='cartCardContainer'>
-                //         <div className='cartCardImage'>
-                //             <img src={`../images/productImages/${cartItem.imgName}`} alt={`${cartItem.name} funko`}/>
-                //         </div>
-                //         <div className='cartCardName'>
-                //             {cartItem.name}
-                //         </div>
-                //         <div className='cartCardPrice'>
-                //             {cartItem.price}
-                //         </div>
-                //         <div id='cartCardQuantityContainer'>
-                //             <label for='quantity'>Quantity: </label>
-                //             <input 
-                //                 type='number'
-                //                 name='quantity'
-                //                 className='cartCardQuantity'
-                //                 min='1'
-                //                 max='99'
-                //                 value={cartItem.quantity}
-                //                 onChange={onChange}
-                //             />
-                //         </div>
-                //     </div>
-                // )
-                
-            })}
-            <div id='cartTotalContainer'>
-                <div id='cartSubtotal'>Subtotal: {props.subtotal}</div>
-                <Link to='/'>Checkout</Link>
-            </div>
+            <div id='cartTitle'>Shopping Cart</div>
+                {cartItems.map(cartItem=>{
+                    return (
+                        <CartItem
+                            key={cartItem.id}
+                            cartItem={cartItem}
+                            changeProductQuantity={props.changeProductQuantity}
+                            removeProduct={props.removeProduct}
+                        />
+                    )
+                })}
+                <div id='cartTotalContainer'>
+                    <div id='cartSubtotal'>Subtotal: {props.subtotal}</div>
+                    <Link to='/'>Checkout</Link>
+                </div>
         </div>
     )
-
 }
 
 export default Cart;
