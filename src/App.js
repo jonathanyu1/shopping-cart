@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import Routes from './Routes';
 import Nav from './Components/Nav';
-import {BrowserRouter} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 import productData from './productData';
 
 const App = () =>{
@@ -69,7 +69,7 @@ const App = () =>{
   },[cartItems]);
 
   return (
-    <BrowserRouter>
+    <HashRouter basename='/'>
       <div id='siteContainer'>
           <Nav numCartItems={numCartItems}/>
           <Routes 
@@ -81,7 +81,7 @@ const App = () =>{
             subtotal={subtotal}
           />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

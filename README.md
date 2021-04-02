@@ -4,7 +4,7 @@ Preview Link: https://jonathanyu1.github.io/shopping-cart/
 
 # What I learned: #
 
-* How to use BrowseRouter, Switch, Route and Link to setup multi-route react projects
+* How to use HashRouter, Switch, Route and Link to setup multi-route react projects
 
 * How to setup and pass props and states between routes
 
