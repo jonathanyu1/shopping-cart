@@ -23,7 +23,6 @@ const Routes = (props) =>{
                         />
                     )}
                 />
-                {/* <Route path='/shop/:id' component={ProductPage}/> */}
                 <Route
                     path='/shop/:id'
                     render={routeProps=>(
@@ -32,7 +31,6 @@ const Routes = (props) =>{
                             product={(props.getProductById(routeProps.match.params.id))}
                             addProductToCart={props.addProductToCart}
                         />
-                        // <ProductPage product={(props.findProductById(routeProps.match))}/>
                     )}
                 />
                 <Route component={Error}/>

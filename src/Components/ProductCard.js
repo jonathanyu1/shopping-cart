@@ -1,11 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const ProductCard = (props) => {
-
-    useEffect(()=>{
-        console.log(props);
-        console.log(`../images/productImages/${props.imgName}`);
-    },[]);
 
     return (
         <div className='productCardContainer'>

@@ -8,7 +8,6 @@ const Shop = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(()=>{
-        console.log(productData);
         setProducts(productData);
       },[]);
 

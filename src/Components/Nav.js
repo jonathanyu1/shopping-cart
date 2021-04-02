@@ -6,10 +6,7 @@ const Nav = (props) => {
     let location = useLocation();
     const [textColor, setTextColor] = useState('white');
 
-
     useEffect(()=>{
-        console.log(location);
-        console.log(location.pathname);
         setTextColor(
             location.pathname === '/' ? 
             'white'

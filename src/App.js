@@ -11,24 +11,10 @@ const App = () =>{
   const [numCartItems, setNumCartItems] = useState(0);
   const [subtotal, setSubtotal] = useState(0);
 
-  // keep track of cart, send to nav 
-
   const getProductById = (id) =>{
     return productData.find(product => product.id===id);
   }
 
-  // const changeProductQuantity = (id, amount) => {
-  //   const tempCartItems = [...cartItems];
-  //   tempCartItems.forEach((cartItem)=>{
-  //     console.log(cartItem);
-  //     console.log(cartItem.id);
-  //     console.log(id);
-  //     if (cartItem.id===id){
-  //       cartItem.quantity += amount;
-  //     }
-  //   });
-  //   setCartItems(tempCartItems);
-  // }
   const changeProductQuantity = (id, newQuantity) => {
     const tempCartItems = [...cartItems];
     tempCartItems.forEach((cartItem)=>{
@@ -80,12 +66,7 @@ const App = () =>{
   useEffect(()=>{
     getNumCartItems();
     calcSubtotal();
-    console.log(cartItems);
   },[cartItems]);
-
-  useEffect(()=>{
-    console.log(productData);
-  },[]);
 
   return (
     <BrowserRouter>

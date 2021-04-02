@@ -7,12 +7,7 @@ const CartItem = (props) =>{
         setCartItem(props.cartItem);
     },[]);
 
-    useEffect(()=>{
-        console.log(cartItem);
-    },[cartItem]);
-
     const onChange = (e)=>{
-        console.log(e);
         props.changeProductQuantity(cartItem.id,e.target.value);
     }
 
